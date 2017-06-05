@@ -3,5 +3,6 @@
 
 # tools included
 * Terraform
+* Packer
 * AWS CLI
 * Ansible
