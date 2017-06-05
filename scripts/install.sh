@@ -11,7 +11,13 @@ PACKER_VERSION="1.0.0"
 
 # install packages
 apt-get update
-apt-get -y install docker.io ansible unzip
+apt-get -y install docker.io unzip
+# Add ansible repo
+apt-add-repository ppa:ansible/ansible
+# Run apt-get update
+apt-get update
+# Install ansible
+apt-get -y install ansible 
 # add docker privileges
 usermod -G docker ubuntu
 # install pip
