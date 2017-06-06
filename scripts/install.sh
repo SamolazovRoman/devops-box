@@ -49,8 +49,5 @@ P_RETVAL=$?
 && unzip -o packer_${PACKER_VERSION}_linux_amd64.zip -d /usr/local/bin \
 && rm packer_${PACKER_VERSION}_linux_amd64.zip
 
-# add linck from /vagrant to /home
-ln -s /vagrant ~
-
 # clean up
 apt-get clean
