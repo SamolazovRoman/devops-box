@@ -6,7 +6,7 @@ PACKER_VERSION="1.0.0"
 # create new ssh key
 [[ ! -f /home/ubuntu/.ssh/mykey ]] \
 && mkdir -p /home/ubuntu/.ssh \
-&& ssh-keygen -f /home/ubuntu/.ssh/mykey -N '' \
+&& ssh-keygen -f /home/ubuntu/.ssh/id_rsa -N '' \
 && chown -R ubuntu:ubuntu /home/ubuntu/.ssh
 
 # install packages
