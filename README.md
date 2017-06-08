@@ -6,3 +6,4 @@
 * Packer
 * AWS CLI
 * Ansible
+* Tower CLI
