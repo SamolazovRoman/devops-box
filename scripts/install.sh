@@ -30,7 +30,7 @@ fi
 # install cli
 pip install -U awscli
 pip install -U awsebcli
-pip install ansible-tower-cli
+pip install -U ansible-tower-cli
 
 #terraform
 T_VERSION=$(terraform -v | head -1 | cut -d ' ' -f 2 | tail -c +2)
