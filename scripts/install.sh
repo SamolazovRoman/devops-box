@@ -31,6 +31,8 @@ fi
 pip install -U awscli
 pip install -U awsebcli
 pip install -U ansible-tower-cli
+pip install -U boto
+pip install -U boto3
 
 #terraform
 T_VERSION=$(terraform -v | head -1 | cut -d ' ' -f 2 | tail -c +2)
