@@ -33,6 +33,7 @@ pip install -U awsebcli
 pip install -U ansible-tower-cli
 sudo pip install -t /usr/lib/python2.7/dist-packages/ boto
 sudo pip install -t /usr/lib/python2.7/dist-packages/ boto3
+sudo pip install -t /usr/lib/python2.7/dist-packages/ futures
 
 #terraform
 T_VERSION=$(terraform -v | head -1 | cut -d ' ' -f 2 | tail -c +2)
