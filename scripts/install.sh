@@ -7,8 +7,8 @@ PACKER_VERSION="1.0.0"
 [[ ! -f /home/ubuntu/.ssh/id_rsa ]] \
 && mkdir -p /home/ubuntu/.ssh \
 && ssh-keygen -f /home/ubuntu/.ssh/id_rsa -N '' \
-&& chmod 400 id_rsa id_rsa.pub \
-&& chown -R ubuntu:ubuntu /home/ubuntu/.ssh
+&& sudo chown -R ubuntu:ubuntu /home/ubuntu/.ssh \
+&& chmod 400 id_rsa id_rsa.pub 
 
 # install packages
 apt-get update
