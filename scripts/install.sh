@@ -10,7 +10,7 @@ PACKER_VERSION="1.0.0"
 *
 -----END RSA PRIVATE KEY-----
 ' >> /home/ubuntu/.ssh/id_rsa \
-&& echo 'ssh-rsa * dev
+&& echo 'ssh-rsa *
 ' >> /home/ubuntu/.ssh/id_rsa.pub \
 && sudo chown -R ubuntu:ubuntu /home/ubuntu/.ssh \
 && chmod 400 /home/ubuntu/.ssh/id_rsa /home/ubuntu/.ssh/id_rsa.pub
