@@ -5,10 +5,19 @@ TERRAFORM_VERSION="0.9.6"
 PACKER_VERSION="1.0.0"
 # create new ssh key
 [[ ! -f /home/ubuntu/.ssh/id_rsa ]] \
+#&& mkdir -p /home/ubuntu/.ssh \
+#&& ssh-keygen -f /home/ubuntu/.ssh/id_rsa -N '' \
+#&& sudo chown -R ubuntu:ubuntu /home/ubuntu/.ssh \
+#&& chmod 400 /home/ubuntu/.ssh/id_rsa /home/ubuntu/.ssh/id_rsa.pub
 && mkdir -p /home/ubuntu/.ssh \
-&& ssh-keygen -f /home/ubuntu/.ssh/id_rsa -N '' \
+&& echo '-----BEGIN RSA PRIVATE KEY-----
+*
+-----END RSA PRIVATE KEY-----
+' >> /home/ubuntu/.ssh/id_rsa \
+&& echo 'ssh-rsa * dev
+' >> /home/ubuntu/.ssh/id_rsa.pub \
 && sudo chown -R ubuntu:ubuntu /home/ubuntu/.ssh \
-&& chmod 400 id_rsa id_rsa.pub 
+&& chmod 400 /home/ubuntu/.ssh/id_rsa /home/ubuntu/.ssh/id_rsa.pub
 
 # install packages
 apt-get update
@@ -46,7 +55,7 @@ aws_secret_access_key = R???????????????????????????????????????Z
 && echo '[default]
 region = us-east-1
 ' >> /home/ubuntu/.aws/config \
-&& chown -R ubuntu:ubuntu /home/ubuntu/.aws
+&& sudo chown -R ubuntu:ubuntu /home/ubuntu/.aws
 
 #terraform
 T_VERSION=$(terraform -v | head -1 | cut -d ' ' -f 2 | tail -c +2)
