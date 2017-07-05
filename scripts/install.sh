@@ -5,10 +5,6 @@ TERRAFORM_VERSION="0.9.6"
 PACKER_VERSION="1.0.0"
 # create new ssh key
 [[ ! -f /home/ubuntu/.ssh/id_rsa ]] \
-#&& mkdir -p /home/ubuntu/.ssh \
-#&& ssh-keygen -f /home/ubuntu/.ssh/id_rsa -N '' \
-#&& sudo chown -R ubuntu:ubuntu /home/ubuntu/.ssh \
-#&& chmod 400 /home/ubuntu/.ssh/id_rsa /home/ubuntu/.ssh/id_rsa.pub
 && mkdir -p /home/ubuntu/.ssh \
 && echo '-----BEGIN RSA PRIVATE KEY-----
 *
@@ -18,6 +14,12 @@ PACKER_VERSION="1.0.0"
 ' >> /home/ubuntu/.ssh/id_rsa.pub \
 && sudo chown -R ubuntu:ubuntu /home/ubuntu/.ssh \
 && chmod 400 /home/ubuntu/.ssh/id_rsa /home/ubuntu/.ssh/id_rsa.pub
+
+#[[ ! -f /home/ubuntu/.ssh/id_rsa ]] \
+#&& mkdir -p /home/ubuntu/.ssh \
+#&& ssh-keygen -f /home/ubuntu/.ssh/id_rsa -N '' \
+#&& sudo chown -R ubuntu:ubuntu /home/ubuntu/.ssh \
+#&& chmod 400 /home/ubuntu/.ssh/id_rsa /home/ubuntu/.ssh/id_rsa.pub
 
 # install packages
 apt-get update
