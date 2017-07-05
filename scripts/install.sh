@@ -4,10 +4,11 @@ set -x
 TERRAFORM_VERSION="0.9.6"
 PACKER_VERSION="1.0.0"
 # create new ssh key
-[[ ! -f /home/ubuntu/.ssh/mykey ]] \
+[[ ! -f /home/ubuntu/.ssh/id_rsa ]] \
 && mkdir -p /home/ubuntu/.ssh \
 && ssh-keygen -f /home/ubuntu/.ssh/id_rsa -N '' \
-&& chown -R ubuntu:ubuntu /home/ubuntu/.ssh
+&& chown -R ubuntu:ubuntu /home/ubuntu/.ssh \
+&& chmod 400 id_rsa id_rsa.pub
 
 # install packages
 apt-get update
@@ -34,6 +35,19 @@ pip install -U ansible-tower-cli
 sudo pip install -t /usr/lib/python2.7/dist-packages/ boto
 sudo pip install -t /usr/lib/python2.7/dist-packages/ boto3
 sudo pip install -t /usr/lib/python2.7/dist-packages/ futures
+
+# create new AWS key
+[[ ! -f /home/ubuntu/.aws/credentials ]] \
+&& mkdir -p /home/ubuntu/.aws \
+&& echo '
+aws_access_key_id = A??????????????????A
+aws_secret_access_key = R???????????????????????????????????????Z
+' >> /home/ubuntu/.aws/credentials \
+&& echo '
+[default]
+region = us-east-1
+' >> /home/ubuntu/.aws/config \
+&& chown -R ubuntu:ubuntu /home/ubuntu/.ssh
 
 #terraform
 T_VERSION=$(terraform -v | head -1 | cut -d ' ' -f 2 | tail -c +2)
