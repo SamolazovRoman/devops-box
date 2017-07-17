@@ -46,6 +46,7 @@ pip install -U ansible-tower-cli
 sudo pip install -t /usr/lib/python2.7/dist-packages/ boto
 sudo pip install -t /usr/lib/python2.7/dist-packages/ boto3
 sudo pip install -t /usr/lib/python2.7/dist-packages/ futures
+sudo pip install -t /usr/lib/python2.7/dist-packages/ xmltodict
 
 # create new AWS key
 [[ ! -f /home/ubuntu/.aws/credentials ]] \
