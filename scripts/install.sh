@@ -47,6 +47,7 @@ sudo pip install -t /usr/lib/python2.7/dist-packages/ boto
 sudo pip install -t /usr/lib/python2.7/dist-packages/ boto3
 sudo pip install -t /usr/lib/python2.7/dist-packages/ futures
 sudo pip install -t /usr/lib/python2.7/dist-packages/ xmltodict
+sudo pip install -t /usr/lib/python2.7/dist-packages/ pywinrm
 
 # create new AWS key
 [[ ! -f /home/ubuntu/.aws/credentials ]] \
